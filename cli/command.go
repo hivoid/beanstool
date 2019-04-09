@@ -70,6 +70,7 @@ func (c *Command) GetStatsForTube(tube string) (*TubeStats, error) {
 		JobsUrgent:   mustConvertToInt(s["current-jobs-urgent"]),
 		Waiting:      mustConvertToInt(s["current-waiting"]),
 		TotalJobs:    mustConvertToInt(s["total-jobs"]),
+		Using:        mustConvertToInt(s["current-using"]),
 	}, nil
 }
 
@@ -81,4 +82,5 @@ type TubeStats struct {
 	JobsUrgent   int
 	Waiting      int
 	TotalJobs    int
+	Using        int
 }

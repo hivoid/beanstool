@@ -27,7 +27,7 @@ all: test build
 
 build: dependencies
 	for cmd in $(COMMANDS); do \
-		$(GOCMD) build -ldflags "-X main.version $(VERSION) -X main.build \"$(BUILD)\"" $${cmd}.go; \
+		$(GOCMD) build -ldflags "-X main.version=$(VERSION)" $${cmd}.go; \
 	done
 
 test: dependencies

@@ -5,7 +5,7 @@ import (
 
 	"github.com/agtorre/gocolorize"
 	"github.com/jessevdk/go-flags"
-	"github.com/src-d/beanstool/cli"
+	"github.com/quiethsiao/beanstool/cli"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

@@ -48,7 +48,7 @@ func (c *StatsCommand) PrintStats() error {
 	})
 
 	table.SetHeader([]string{
-		"Name", "Buried", "Delayed", "Ready", "Reserved", "Urgent", "Waiting", "Total",
+		"Name", "Buried", "Delayed", "Ready", "Reserved", "Urgent", "Waiting", "Total", "Using",
 	})
 
 	table.AddRow(c.buildLineFromTubeStats(DefaultTube, stats[DefaultTube]))
@@ -76,6 +76,7 @@ func (c *StatsCommand) buildLineFromTubeStats(name string, s *TubeStats) []strin
 	l = append(l, addStyle(s.JobsUrgent, 8, NormalSeverity))
 	l = append(l, addStyle(s.Waiting, 8, LowSeverity))
 	l = append(l, addStyle(s.TotalJobs, 8, LowSeverity))
+	l = append(l, addStyle(s.Using, 8, LowSeverity))
 
 	return l
 }
