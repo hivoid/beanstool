@@ -51,7 +51,10 @@ func (c *StatsCommand) PrintStats() error {
 		"Name", "Buried", "Delayed", "Ready", "Reserved", "Urgent", "Waiting", "Total", "Using",
 	})
 
-	table.AddRow(c.buildLineFromTubeStats(DefaultTube, stats[DefaultTube]))
+	if tubeStats, ok := stats[DefaultTube]; ok == true {
+		table.AddRow(c.buildLineFromTubeStats(DefaultTube, tubeStats))
+	}
+
 
 	for _, t := range sortedKeys(stats) {
 		if t == DefaultTube {
