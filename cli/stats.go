@@ -51,7 +51,7 @@ func (c *StatsCommand) PrintStats() error {
 		"Name", "Buried", "Delayed", "Ready", "Reserved", "Urgent", "Waiting", "Total", "Using",
 	})
 
-	if tubeStats, ok := stats[DefaultTube]; ok == true {
+	if tubeStats, ok := stats[DefaultTube]; ok {
 		table.AddRow(c.buildLineFromTubeStats(DefaultTube, tubeStats))
 	}
 
